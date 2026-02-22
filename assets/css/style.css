@@ -1007,19 +1007,45 @@ footer {
 
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* RESPONSIVE */
+/* ========================
+   RESPONSIVE — COMPLETE FIX
+======================== */
+
+/* ---- Tablet 1024px ---- */
 @media (max-width: 1024px) {
+  /* programs */
   .prog-grid { grid-template-columns: 1fr 1fr; }
+
+  /* about */
   .about-grid { grid-template-columns: 1fr; }
+  .about-img-wrap img { height: 420px; }
   .about-img-tag { right: 1rem; bottom: 1rem; }
+
+  /* contact */
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .g1,.g2,.g3,.g4,.g5 { grid-column: auto; grid-row: auto; height: 260px; }
+
+  /* gallery */
+  .gallery-mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .g1,.g2,.g3,.g4,.g5 {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: 260px;
+  }
+
+  /* Arm wrestling 2-col */
+  .aw-grid { grid-template-columns: 1fr !important; }
+
+  /* pricing FAQ 2-col */
+  .faq-grid { grid-template-columns: 1fr !important; }
 }
 
+/* ---- Mobile 768px ---- */
 @media (max-width: 768px) {
-  nav { padding: 0 1.5rem; }
-  .hero-content { padding: 2rem 1.5rem; }
+  /* nav */
+  nav { padding: 0 1.25rem; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .nav-links.open {
@@ -1028,22 +1054,230 @@ footer {
     position: fixed;
     top: 72px; left: 0; right: 0;
     background: rgba(6,6,8,0.99);
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.25rem;
     gap: 1.5rem;
     border-bottom: 1px solid rgba(230,57,70,0.1);
+    z-index: 999;
   }
-  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+
+  /* hero */
+  .hero-content { padding: 2rem 1.25rem; }
+  .hero-title { font-size: clamp(3.5rem, 14vw, 5.5rem); }
+  .hero-btns { flex-direction: column; align-items: flex-start; }
+  .hero-btns .btn-red,
+  .hero-btns .btn-outline { width: 100%; justify-content: center; }
+
+  /* stats */
+  .stats-bar { padding: 1.5rem 1.25rem; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .stat-n { font-size: 2.2rem; }
+
+  /* sections */
+  section { padding: 3.5rem 1.25rem; }
+
+  /* programs */
   .prog-grid { grid-template-columns: 1fr; }
+  .prog-card { aspect-ratio: 4/3; }
+
+  /* INLINE GRID FIXES — timing/offer section */
+  .timings-offer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* about */
+  .about-grid { gap: 2.5rem; }
+  .about-img-wrap img { height: 320px; }
+  .about-img-tag { padding: 1rem 1.25rem; }
+  .about-img-tag .big { font-size: 2rem; }
+
+  /* trainers */
   .trainer-grid { grid-template-columns: 1fr; }
-  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .ft-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .trainer-card { height: 380px; }
+
+  /* gallery */
+  .gallery-mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .g1,.g2,.g3,.g4,.g5 {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: 200px;
+  }
+
+  /* page header */
+  .page-header { min-height: 35vh; padding-top: 100px; padding-left: 1.25rem; padding-right: 1.25rem; }
+  .ph-title { font-size: clamp(2.5rem, 10vw, 4rem); }
+
+  /* pricing */
+  .pricing-wrap { max-width: 100%; }
+  .pricing-header { padding: 2rem 1.5rem; }
+  .price-now { font-size: 4.5rem; }
+  .pricing-body { padding: 1.5rem; }
+
+  /* schedule table horizontal scroll */
+  .schedule-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .schedule-table { min-width: 480px; }
+
+  /* contact form */
   .form-row { grid-template-columns: 1fr; }
-  section { padding: 4rem 1.5rem; }
+  .map-frame { height: 280px; }
+
+  /* footer */
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  footer { padding: 3rem 1.25rem 1.5rem; }
+  .ft-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  /* CTA band */
+  .cta-band { padding: 4rem 1.25rem; }
+  .cta-band h2 { font-size: clamp(2rem, 8vw, 3rem); }
+  .cta-band-btns { flex-direction: column; align-items: center; }
+  .cta-band-btns .btn-red,
+  .cta-band-btns .btn-outline { width: 100%; max-width: 320px; justify-content: center; }
+
+  /* quick contact btns */
+  .quick-btns { flex-direction: column; }
+  .q-btn { justify-content: center; }
+
+  /* FAQ grid in pricing */
+  .faq-grid { grid-template-columns: 1fr !important; }
+
+  /* programs detail page 2-col text splits */
+  .prog-detail-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- Small mobile 480px ---- */
+@media (max-width: 480px) {
+  .hero-title { font-size: 3.2rem; }
+  .hero-sub { font-size: 0.95rem; }
+
+  .stat-n { font-size: 1.8rem; }
+  .stat-l { font-size: 0.7rem; letter-spacing: 1px; }
+
+  /* gallery single column */
+  .gallery-mosaic { grid-template-columns: 1fr; }
+  .g1,.g2,.g3,.g4,.g5 { height: 220px; }
+
+  /* section title smaller */
+  .section-title { font-size: 2rem; }
+  .ph-title { font-size: 2.5rem; }
+
+  /* trainer card */
+  .trainer-card { height: 320px; }
+
+  /* pricing card */
+  .price-now { font-size: 3.8rem; }
+  .price-curr { font-size: 2rem; }
+
+  /* buttons full width */
+  .btn-red, .btn-outline {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* nav logo smaller */
+  .nav-logo { font-size: 1.5rem; letter-spacing: 2px; }
+
+  /* about image */
+  .about-img-wrap img { height: 260px; }
+}
+
+/* ========================
+   EXTRA TARGETED FIXES
+======================== */
+
+/* Hero — prevent horizontal scroll from overflow */
+.hero { max-width: 100vw; }
+.hero-img { max-width: 100%; }
+.hero-content { max-width: 100%; }
+
+/* All sections — prevent overflow */
+section, .stats-bar, footer, .cta-band, .page-header {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Page header backgrounds */
+.ph-bg { max-width: 100%; }
+
+/* Images never overflow */
+img { max-width: 100%; height: auto; }
+
+/* Prog cards on mobile — fixed height for consistency */
+@media (max-width: 768px) {
+  .prog-card { aspect-ratio: unset; height: 280px; }
+  .prog-card img { height: 100%; width: 100%; object-fit: cover; }
+  .prog-desc { opacity: 1 !important; transform: none !important; }
+
+  /* About image — no negative offset on mobile */
+  .about-img-tag { position: relative; right: auto; bottom: auto; margin-top: 1rem; display: inline-block; }
+  .about-img-wrap { overflow: visible; }
+
+  /* Ensure all inline grids with 2 cols collapse */
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* contact page ci-item on very small */
+  .ci-item { align-items: flex-start; }
+  .ci-icon { flex-shrink: 0; }
+
+  /* Trainer overlay always visible on mobile */
+  .trainer-bio { opacity: 1 !important; transform: none !important; }
+
+  /* Gallery mosaic on mobile */
+  .gallery-mosaic { gap: 3px; }
+
+  /* Buttons inside CTA band */
+  .cta-band .btn-red,
+  .cta-band .btn-outline {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Footer inner spacing */
+  .footer-inner { padding: 0; }
+
+  /* Schedule table scroll hint */
+  .schedule-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid rgba(230,57,70,0.1);
+  }
 }
 
 @media (max-width: 480px) {
-  .hero-title { font-size: 4rem; }
-  .hero-btns { flex-direction: column; }
-  .gallery-mosaic { grid-template-columns: 1fr; }
-  .g1,.g2,.g3,.g4,.g5 { height: 240px; }
+  /* Eyebrow line — smaller on mobile */
+  .eyebrow-line { width: 20px; }
+
+  /* CTA buttons */
+  .cta-band .btn-red,
+  .cta-band .btn-outline {
+    max-width: 100%;
+  }
+
+  /* Nav logo */
+  .nav-logo { letter-spacing: 2px; }
+
+  /* Hero eyebrow text smaller */
+  .hero-eyebrow span { font-size: 0.7rem; letter-spacing: 2px; }
+
+  /* Timing rows */
+  .timing-day, .timing-time { font-size: 0.9rem; }
+
+  /* Pricing features */
+  .price-feat li { font-size: 0.95rem; }
+
+  /* Form labels */
+  .form-label { font-size: 0.7rem; }
 }

@@ -4,287 +4,148 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Byscore Fitness Studio</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    .send-options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-    .send-btn-wa {
-      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-      background: #25d366; color: #fff;
-      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-      font-size: 0.95rem; letter-spacing: 2px; text-transform: uppercase;
-      padding: 0.9rem 1rem; border: none; border-radius: 3px;
-      cursor: pointer; transition: all 0.3s; width: 100%;
-    }
-    .send-btn-wa:hover { background: #1da851; transform: translateY(-2px); }
-    .send-btn-email {
-      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-      background: transparent; color: var(--white);
-      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-      font-size: 0.95rem; letter-spacing: 2px; text-transform: uppercase;
-      padding: 0.9rem 1rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 3px;
-      cursor: pointer; transition: all 0.3s; width: 100%;
-    }
-    .send-btn-email:hover { border-color: var(--red); color: var(--red); }
-    .send-label {
-      text-align: center;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--text-muted); margin: 1.25rem 0 0.75rem;
-    }
-    .divider-line {
-      display: flex; align-items: center; gap: 1rem; margin: 1rem 0;
-    }
-    .divider-line::before, .divider-line::after {
-      content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08);
-    }
-    .divider-line span {
-      font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem;
-      letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase;
-    }
-    .success-popup {
-      display: none;
-      position: fixed;
-      bottom: 2rem; right: 2rem;
-      background: var(--dark2);
-      border-left: 4px solid #25d366;
-      padding: 1.25rem 1.5rem;
-      border-radius: 4px;
-      z-index: 9998;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-      animation: slideIn 0.4s ease;
-      max-width: 320px;
-    }
-    .success-popup.email-popup { border-left-color: var(--red); }
-    .success-popup.show { display: block; }
-    .success-title {
-      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-      font-size: 1rem; letter-spacing: 2px; color: var(--white); margin-bottom: 0.3rem;
-    }
-    .success-msg { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--silver); }
-    @keyframes slideIn {
-      from { opacity:0; transform: translateX(20px); }
-      to { opacity:1; transform: translateX(0); }
-    }
-    @media (max-width: 480px) {
-      .send-options { grid-template-columns: 1fr; }
-      .success-popup { bottom: 1rem; right: 1rem; left: 1rem; max-width: none; }
-    }
-  </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html" class="nav-logo">BYSCORE <span>FITNESS</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-      <li><a href="programs.html">Programs</a></li><li><a href="trainers.html">Trainers</a></li>
-      <li><a href="pricing.html">Pricing</a></li><li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html" class="active nav-cta">Join Now</a></li>
-    </ul>
-    <div class="hamburger"><span></span><span></span><span></span></div>
-  </nav>
+<nav>
+  <a href="index.html" class="nav-logo">BYSCORE <span>FITNESS</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li><li><a href="trainers.html">Trainers</a></li>
+    <li><a href="pricing.html">Pricing</a></li><li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html" class="active nav-cta">Join Now</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
 
-  <!-- Success Popups -->
-  <div class="success-popup" id="waPopup">
-    <div class="success-title">&#128172; WhatsApp Opening...</div>
-    <div class="success-msg">Your message is being sent via WhatsApp. We'll reply shortly!</div>
-  </div>
-  <div class="success-popup email-popup" id="emailPopup">
-    <div class="success-title">&#9993; Email Opening...</div>
-    <div class="success-msg">Your enquiry is ready to send via Email!</div>
-  </div>
+<div class="page-hdr">
+  <div class="page-hdr-bg" style="background-image:url('assets/images/gym-rowing-class.jpg');"></div>
+  <div class="page-hdr-content"><div class="page-hdr-label">Get In Touch</div><h1 class="page-hdr-title">CONTACT <span style="color:var(--red)">US</span></h1></div>
+</div>
 
-  <div class="page-header">
-    <div class="ph-bg" style="background-image:url('assets/images/gym-rowing-class.jpg');"></div>
-    <div class="ph-content"><div class="ph-label">Get In Touch</div><h1 class="ph-title">CONTACT <span style="color:var(--red);">US</span></h1></div>
-  </div>
+<!-- Toast -->
+<div class="toast" id="waToast"><div class="toast-title">&#128172; WhatsApp Opening...</div><div class="toast-msg">Your message is ready. We'll reply shortly!</div></div>
+<div class="toast email" id="emToast"><div class="toast-title">&#9993; Email Opening...</div><div class="toast-msg">Your enquiry is ready to send via Email!</div></div>
 
-  <section style="background:var(--dark);">
-    <div class="container">
-      <div class="contact-grid">
-        <!-- LEFT: Info -->
-        <div>
-          <div class="eyebrow reveal"><div class="eyebrow-line"></div><span>Reach Out</span></div>
-          <h2 class="section-title reveal">LET'S <span>CONNECT</span></h2>
-          <p style="font-family:'DM Sans';font-weight:300;color:var(--silver);line-height:1.9;margin-bottom:2.5rem;" class="reveal">Ready to start your fitness journey? Fill the form and send directly to our WhatsApp or Email — we'll get back to you fast!</p>
-
-          <div class="ci-item reveal">
-            <div class="ci-icon">&#128205;</div>
-            <div><div class="ci-label">Address</div><div class="ci-val">Maanu Complex, Vidyut Nagar<br>Ayyapuram, Palakkad, Kerala 678001</div></div>
-          </div>
-          <div class="ci-item reveal">
-            <div class="ci-icon">&#8987;</div>
-            <div><div class="ci-label">Gym Hours</div><div class="ci-val">Mon &ndash; Sat: 5:00 AM &ndash; 11:00 AM<br>Mon &ndash; Sat: 4:30 PM &ndash; 10:30 PM<br>Sunday: Closed</div></div>
-          </div>
-          <div class="ci-item reveal">
-            <div class="ci-icon">&#128172;</div>
-            <div><div class="ci-label">WhatsApp</div><div class="ci-val"><a href="https://wa.me/918848746337" target="_blank">+91 88487 46337</a></div></div>
-          </div>
-          <div class="ci-item reveal">
-            <div class="ci-icon">&#9993;</div>
-            <div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:sreeprasadsree03@gmail.com">sreeprasadsree03@gmail.com</a></div></div>
-          </div>
-
-          <div class="quick-btns reveal">
-            <a href="https://maps.app.goo.gl/NdrCjGcsgMtt5zP99" target="_blank" class="q-btn">&#128205; Directions</a>
-            <a href="https://wa.me/918848746337" target="_blank" class="q-btn wa">&#128172; WhatsApp</a>
-            <a href="mailto:sreeprasadsree03@gmail.com" class="q-btn">&#9993; Email</a>
-          </div>
-        </div>
-
-        <!-- RIGHT: Form -->
-        <div>
-          <div style="background:var(--dark2);border-top:3px solid var(--red);padding:2.5rem;" class="reveal">
-            <div style="font-family:'Bebas Neue';font-size:1.6rem;color:var(--white);letter-spacing:3px;margin-bottom:0.5rem;">SEND AN ENQUIRY</div>
-            <div style="font-family:'DM Sans';font-size:0.85rem;color:var(--silver);margin-bottom:2rem;">Fill the form &amp; send directly to our <strong style="color:#25d366;">WhatsApp</strong> or <strong style="color:var(--red);">Email</strong></div>
-
-            <form class="contact-form" id="enquiryForm">
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">Full Name *</label>
-                  <input type="text" id="fname" placeholder="Your name" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Phone Number</label>
-                  <input type="tel" id="fphone" placeholder="Your phone number">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Interested In</label>
-                <select id="fprogram">
-                  <option value="">Select a program</option>
-                  <option>Weight Training</option>
-                  <option>Boxing</option>
-                  <option>Functional Training</option>
-                  <option>Personal Training</option>
-                  <option>Diet Plan</option>
-                  <option>Pro Arm Wrestling Hub</option>
-                  <option>Annual Membership</option>
-                  <option>Couple Offer</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Message</label>
-                <textarea id="fmessage" placeholder="Tell us about your fitness goals..."></textarea>
-              </div>
-
-              <!-- SEND OPTIONS -->
-              <div class="send-label">Choose how to send</div>
-              <div class="send-options">
-                <button type="button" class="send-btn-wa" onclick="sendWhatsApp()">
-                  &#128172; Send via WhatsApp
-                </button>
-                <button type="button" class="send-btn-email" onclick="sendEmail()">
-                  &#9993; Send via Email
-                </button>
-              </div>
-
-              <div class="divider-line"><span>or</span></div>
-              <a href="https://maps.app.goo.gl/NdrCjGcsgMtt5zP99" target="_blank" class="btn-outline" style="width:100%;justify-content:center;display:flex;">&#128205; Visit Us at Palakkad</a>
-            </form>
-          </div>
-
-          <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920!2d76.65!3d10.77!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba86e11f06e6d01%3A0x66451f0e94a7c02e!2sPalakkad%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen loading="lazy" title="Byscore Fitness Studio Location"></iframe>
-          <div style="margin-top:1rem;text-align:center;">
-            <a href="https://maps.app.goo.gl/NdrCjGcsgMtt5zP99" target="_blank" class="btn-red">Open Full Map</a>
-          </div>
+<div class="section section--dark">
+  <div class="container">
+    <div class="contact-wrap">
+      <!-- LEFT INFO -->
+      <div>
+        <div class="eyebrow reveal"><div class="eyebrow-line"></div><span class="eyebrow-text">Reach Out</span></div>
+        <h2 class="section-title reveal">LET'S <span>CONNECT</span></h2>
+        <p class="body-p reveal">Fill the form &amp; send directly to our <strong style="color:var(--green)">WhatsApp</strong> or <strong style="color:var(--red)">Email</strong> &mdash; we'll reply fast!</p>
+        <div class="ci-row reveal"><div class="ci-icon">&#128205;</div><div><div class="ci-label">Address</div><div class="ci-val">Maanu Complex, Vidyut Nagar<br>Ayyapuram, Palakkad, Kerala 678001</div></div></div>
+        <div class="ci-row reveal"><div class="ci-icon">&#8987;</div><div><div class="ci-label">Gym Hours</div><div class="ci-val">Mon &ndash; Sat: 5:00 AM &ndash; 11:00 AM<br>Mon &ndash; Sat: 4:30 PM &ndash; 10:30 PM<br>Sunday: Closed</div></div></div>
+        <div class="ci-row reveal"><div class="ci-icon">&#128172;</div><div><div class="ci-label">WhatsApp</div><div class="ci-val"><a href="https://wa.me/918848746337" target="_blank">+91 88487 46337</a></div></div></div>
+        <div class="ci-row reveal"><div class="ci-icon">&#9993;</div><div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:sreeprasadsree03@gmail.com">sreeprasadsree03@gmail.com</a></div></div></div>
+        <div class="quick-btns reveal">
+          <a href="https://maps.app.goo.gl/NdrCjGcsgMtt5zP99" target="_blank" class="q-btn">&#128205; Directions</a>
+          <a href="https://wa.me/918848746337" target="_blank" class="q-btn wa">&#128172; WhatsApp</a>
+          <a href="mailto:sreeprasadsree03@gmail.com" class="q-btn">&#9993; Email</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <div class="cta-band">
-    <div class="cta-band-bg" style="background-image:url('assets/images/prog-strength.jpg');"></div>
-    <div class="cta-band-content">
-      <h2>START YOUR <span>TRANSFORMATION</span></h2>
-      <p>Annual membership from just &#8377;10,000. No admission fees. Couple offers available.</p>
-      <a href="pricing.html" class="btn-red">View Pricing</a>
+      <!-- RIGHT FORM -->
+      <div class="reveal">
+        <div class="form-box">
+          <div class="form-box-title">SEND AN ENQUIRY</div>
+          <div class="form-box-sub">Fill the form &amp; send via <strong style="color:var(--green)">WhatsApp</strong> or <strong style="color:var(--red)">Email</strong></div>
+          <form id="eForm">
+            <div class="f-row">
+              <div class="f-group"><label class="f-label">Full Name *</label><input type="text" id="fn" placeholder="Your name" required></div>
+              <div class="f-group"><label class="f-label">Phone Number</label><input type="tel" id="fp" placeholder="Your phone number"></div>
+            </div>
+            <label class="f-label">Interested In</label>
+            <select id="fg">
+              <option value="">Select a program</option>
+              <option>Weight Training</option><option>Boxing</option>
+              <option>Functional Training</option><option>Personal Training</option>
+              <option>Diet Plan</option><option>Pro Arm Wrestling Hub</option>
+              <option>Annual Membership</option><option>Couple Offer</option>
+            </select>
+            <label class="f-label">Message</label>
+            <textarea id="fm" placeholder="Tell us about your fitness goals..."></textarea>
+            <div class="send-label">Choose how to send</div>
+            <div class="send-options">
+              <button type="button" class="wa-btn" onclick="sendWA()">&#128172; Send via WhatsApp</button>
+              <button type="button" class="em-btn" onclick="sendEM()">&#9993; Send via Email</button>
+            </div>
+            <div class="or-line"><span>or</span></div>
+            <a href="https://maps.app.goo.gl/NdrCjGcsgMtt5zP99" target="_blank" class="btn-outline">&#128205; Visit Us at Palakkad</a>
+          </form>
+        </div>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920!2d76.65!3d10.77!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba86e11f06e6d01%3A0x66451f0e94a7c02e!2sPalakkad%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen loading="lazy" title="Location"></iframe>
+        <div style="margin-top:1rem;"><a href="https://maps.app.goo.gl/NdrCjGcsgMtt5zP99" target="_blank" class="btn-red">Open Full Map</a></div>
+      </div>
     </div>
   </div>
+</div>
 
-  <footer>
-    <div class="footer-inner">
-      <div><div class="ft-logo">BYSCORE <span>FITNESS</span></div><p class="ft-desc">Your premier fitness destination in Palakkad.</p><div class="ft-socials"><a href="https://wa.me/918848746337" target="_blank" class="social-btn">WA</a><a href="https://maps.app.goo.gl/NdrCjGcsgMtt5zP99" target="_blank" class="social-btn">&#128205;</a></div></div>
-      <div><div class="ft-heading">Quick Links</div><ul class="ft-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="trainers.html">Trainers</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div><div class="ft-heading">Programs</div><ul class="ft-links"><li><a href="programs.html">Weight Training</a></li><li><a href="programs.html">Boxing</a></li><li><a href="programs.html">Functional Training</a></li><li><a href="programs.html">Personal Training</a></li><li><a href="programs.html">Diet Plan</a></li><li><a href="programs.html">Arm Wrestling Hub</a></li></ul></div>
-    </div>
-    <div class="ft-bottom"><span>&copy; 2025 Byscore Fitness Studio.</span><span>Palakkad, Kerala 678001</span></div>
-  </footer>
+<div class="cta-band">
+  <div class="cta-bg" style="background-image:url('assets/images/prog-strength.jpg');"></div>
+  <div class="cta-content">
+    <h2 class="cta-title">START YOUR <span>TRANSFORMATION</span></h2>
+    <p class="cta-desc">Annual membership from just &#8377;10,000. No admission fees. Couple offers available.</p>
+    <div class="cta-btns"><a href="pricing.html" class="btn-red">View Pricing</a></div>
+  </div>
+</div>
 
-  <script>
-    // =============================================
-    // WHATSAPP PHONE NUMBER — ഇവിടെ നിങ്ങളുടെ
-    // WhatsApp number ചേർക്കുക (country code സഹിതം)
-    // Example: India +91 98959 30027 → 919895930027
-    // =============================================
-    const WA_NUMBER = '918848746337';
-    const EMAIL_ADDRESS = 'sreeprasadsree03@gmail.com';
+<footer>
+  <div class="footer-inner">
+    <div><div class="ft-logo">BYSCORE <span>FITNESS</span></div><p class="ft-desc">Your premier fitness destination in Palakkad.</p><div class="ft-soc"><a href="https://wa.me/918848746337" target="_blank" class="soc-btn">WA</a><a href="https://maps.app.goo.gl/NdrCjGcsgMtt5zP99" target="_blank" class="soc-btn">&#128205;</a></div></div>
+    <div><div class="ft-head">Quick Links</div><ul class="ft-list"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="trainers.html">Trainers</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><div class="ft-head">Programs</div><ul class="ft-list"><li><a href="programs.html">Weight Training</a></li><li><a href="programs.html">Boxing</a></li><li><a href="programs.html">Functional Training</a></li><li><a href="programs.html">Personal Training</a></li><li><a href="programs.html">Diet Plan</a></li><li><a href="programs.html">Arm Wrestling Hub</a></li></ul></div>
+  </div>
+  <div class="ft-bottom"><span>&copy; 2025 Byscore Fitness Studio.</span><span>Palakkad, Kerala 678001</span></div>
+</footer>
 
-    function getFormData() {
-      const name    = document.getElementById('fname').value.trim();
-      const phone   = document.getElementById('fphone').value.trim();
-      const program = document.getElementById('fprogram').value;
-      const message = document.getElementById('fmessage').value.trim();
-      return { name, phone, program, message };
-    }
-
-    function validateName() {
-      const name = document.getElementById('fname').value.trim();
-      if (!name) {
-        document.getElementById('fname').focus();
-        document.getElementById('fname').style.borderColor = 'var(--red)';
-        setTimeout(() => document.getElementById('fname').style.borderColor = '', 2000);
-        return false;
-      }
-      return true;
-    }
-
-    function sendWhatsApp() {
-      if (!validateName()) return;
-      const { name, phone, program, message } = getFormData();
-
-      let text = `*New Enquiry — Byscore Fitness Studio*\n\n`;
-      text += `*Name:* ${name}\n`;
-      if (phone) text += `*Phone:* ${phone}\n`;
-      if (program) text += `*Interested In:* ${program}\n`;
-      if (message) text += `*Message:* ${message}\n`;
-      text += `\n_Sent from Byscore Fitness website_`;
-
-      const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
-
-      showPopup('waPopup');
-      document.getElementById('enquiryForm').reset();
-    }
-
-    function sendEmail() {
-      if (!validateName()) return;
-      const { name, phone, program, message } = getFormData();
-
-      const subject = `Enquiry from ${name} — Byscore Fitness Studio`;
-      let body = `New Enquiry from Website\n\n`;
-      body += `Name: ${name}\n`;
-      if (phone) body += `Phone: ${phone}\n`;
-      if (program) body += `Interested In: ${program}\n`;
-      if (message) body += `Message: ${message}\n`;
-      body += `\nSent from Byscore Fitness website`;
-
-      const mailto = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-
-      showPopup('emailPopup');
-      document.getElementById('enquiryForm').reset();
-    }
-
-    function showPopup(id) {
-      const popup = document.getElementById(id);
-      popup.classList.add('show');
-      setTimeout(() => popup.classList.remove('show'), 4000);
-    }
-  </script>
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+<script>
+  const WA = '918848746337';
+  const EM = 'sreeprasadsree03@gmail.com';
+  function getData() {
+    return {
+      name: document.getElementById('fn').value.trim(),
+      phone: document.getElementById('fp').value.trim(),
+      prog: document.getElementById('fg').value,
+      msg: document.getElementById('fm').value.trim()
+    };
+  }
+  function validate() {
+    const n = document.getElementById('fn');
+    if (!n.value.trim()) { n.style.borderColor='var(--red)'; n.focus(); setTimeout(()=>n.style.borderColor='',2000); return false; }
+    return true;
+  }
+  function toast(id) {
+    const t = document.getElementById(id);
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'), 4000);
+  }
+  function sendWA() {
+    if (!validate()) return;
+    const d = getData();
+    let txt = '*New Enquiry — Byscore Fitness Studio*\n\n';
+    txt += `*Name:* ${d.name}\n`;
+    if (d.phone) txt += `*Phone:* ${d.phone}\n`;
+    if (d.prog) txt += `*Interested In:* ${d.prog}\n`;
+    if (d.msg) txt += `*Message:* ${d.msg}\n`;
+    txt += '\n_Sent from Byscore Fitness website_';
+    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(txt)}`, '_blank');
+    toast('waToast');
+    document.getElementById('eForm').reset();
+  }
+  function sendEM() {
+    if (!validate()) return;
+    const d = getData();
+    const sub = `Enquiry from ${d.name} — Byscore Fitness Studio`;
+    let body = `New Enquiry from Website\n\nName: ${d.name}\n`;
+    if (d.phone) body += `Phone: ${d.phone}\n`;
+    if (d.prog) body += `Interested In: ${d.prog}\n`;
+    if (d.msg) body += `Message: ${d.msg}\n`;
+    body += '\nSent from Byscore Fitness website';
+    window.location.href = `mailto:${EM}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
+    toast('emToast');
+    document.getElementById('eForm').reset();
+  }
+</script>
+<script src="assets/js/main.js"></script>
+</body></html>

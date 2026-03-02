@@ -24,9 +24,16 @@
 
 <!-- HERO -->
 <section class="hero">
-   <video class="hero-video" autoplay muted loop playsinline>
-      <source src="assets/images/gym-workout.mp4" type="video/mp4">
+  <div class="hero-bg">
+    <!-- Desktop video (landscape) -->
+    <video class="hero-video hero-video-desktop" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/images/gym-g1.jpg">
+      <source src="assets/images/gym-desktop.mp4" type="video/mp4">
     </video>
+    <!-- Mobile video (portrait) -->
+    <video class="hero-video hero-video-mobile" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/images/gym-g1.jpg">
+      <source src="assets/images/gym-mobile.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero-content">
     <div class="hero-tag"><div class="hero-tag-line"></div><span class="hero-tag-text">Palakkad, Kerala &middot; Now Open</span></div>
     <h1 class="hero-title">FORGE<br>YOUR <span class="hl">STRENGTH</span></h1>
@@ -37,7 +44,6 @@
     </div>
   </div>
 </section>
-
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stats-grid">

@@ -458,3 +458,17 @@ a.nav-logo {
   object-fit:cover;
   object-position:center;
 }
+
+/* ── MOBILE: hide video, show photo ── */
+/* Desktop: show landscape, hide portrait */
+.hero-video-desktop { display: block; }
+.hero-video-mobile  { display: none; }
+
+/* Mobile: show portrait, hide landscape */
+@media (max-width: 767px) {
+  .hero-video-desktop { display: none; }
+  .hero-video-mobile  { display: block; }
+  .hero-bg {
+    background: url('../images/gym-g1.jpg') center/cover no-repeat;
+  }
+}

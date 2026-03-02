@@ -469,6 +469,6 @@ a.nav-logo {
   .hero-video-desktop { display: none; }
   .hero-video-mobile  { display: block; }
   .hero-bg {
-    background: url('../images/gym-g1.jpg') center/cover no-repeat;
+    background: url('../images/gym-squat.jpg') center/cover no-repeat;
   }
 }
